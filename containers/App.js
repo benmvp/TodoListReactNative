@@ -26,17 +26,14 @@ export default class App extends Component {
     _handleItemToggleCompleted = (indexToComplete) => {
         let {items: prevItems} = this.state;
         let items = prevItems.map((item, i) => {
-            let newItem = item
-
             if (indexToComplete === i) {
-
-                newItem = {
-                    ...newItem,
+                return {
+                    ...item,
                     completed: !newItem.completed
                 }
             }
 
-            return newItem
+            return item
         });
 
         this.setState({items});
